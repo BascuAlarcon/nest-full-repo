@@ -1,0 +1,10 @@
+Sirve para: Para organizar el código
+Funciona con 3 capas:
+    - Dominio: Entidades de negocio, excepciones, validaciones, interfaces o clases abstractas
+    - Aplicación: Casos de uso de la aplicación, servicios de aplicación 
+    - Infraestructura: Implementaciones concretas, adaptadores, persistencia. Acá va la base de datos, rutas, clientes, etc.
+Existe una regla de dependencia: Las capas internas no deben depender de las externas. Sólo se comunican hacia adentro.
+    Es decir, el Dominio no depende de Aplicación ni Infraestructura, y Aplicación no depende de Infraestructura.
+
+
+Capa de Dominio:

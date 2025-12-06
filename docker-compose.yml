@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  tasks-service:
+    build:
+      context: ./apps/tasks-service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+
+  notifications-service:
+    build:
+      context: ./apps/notifications-service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

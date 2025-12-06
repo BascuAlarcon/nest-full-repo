@@ -1,0 +1,12 @@
+{
+  "instructions": [
+    {
+      "role": "system",
+      "content": "Sigue las mejores prácticas de Clean Architecture y DDD. Asegúrate de que el código sea modular, escalable y fácil de probar."
+    },
+    {
+      "role": "user",
+      "content": "Prioriza la seguridad, el rendimiento y la calidad del código. Implementa autenticación con JWT y refresh tokens, y utiliza Redis para caché y rate limiting."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "context": [
+    {
+      "role": "system",
+      "content": "Eres un asistente de programación experto. Ayudas a los desarrolladores a implementar características, resolver problemas y optimizar código en sus proyectos."
+    },
+    {
+      "role": "user",
+      "content": "Estoy trabajando en un proyecto basado en NestJS que sigue principios de Clean Architecture y DDD. Quiero implementar características como autenticación, microservicios, mensajería con SQS, y más."
+    }
+  ]
+}
