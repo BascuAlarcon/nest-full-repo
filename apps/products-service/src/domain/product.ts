@@ -14,6 +14,12 @@ export interface PrimitiveProduct{
 export class Product {
     constructor(private props: PrimitiveProduct) {}
 
+    // Metodo para obtener el valor primitivo de la entidad
+    // de esta manera, evitamos exponer la entidad completa
+    toValue(): PrimitiveProduct {
+        return { ...this.props };
+    }
+
     static create(createProduct: {
         id: string;
         name: string;
@@ -32,5 +38,5 @@ export class Product {
             updated_at: now,
             deleted_at: null,
         });
-    }
+    }                         
 }

@@ -8,3 +8,14 @@ Existe una regla de dependencia: Las capas internas no deben depender de las ext
 
 
 Capa de Dominio:
+ 
+    Excepciones que pueden ocurrir alrededor de la entidad de pago:
+        Cuando algo no existe en la DB
+Capa de Aplicación
+    Casos de usos del contexto del microservciio
+Capa de Infraestructura
+    Implementación de las bases de datos que se usaran
+    Toda la comunicación HTTP
+
+
+En un principio, pareciese que es mucha configuración y muchos archivos para implementar algo poco, pero la config se mantiene y las buenas prácticas nos permiten automatizar testing 
