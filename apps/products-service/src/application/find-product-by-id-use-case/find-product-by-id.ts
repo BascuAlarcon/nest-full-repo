@@ -1,8 +1,8 @@
 import { ProductRepository } from "src/domain/product.repository"; 
 import { PrimitiveProduct, Product } from "src/domain/product";  
-import { Injectable } from "src/shared/dependency-injection/injectable";
+import { Injectable } from "../../../../../libs/shared/injectable";
 import { FindProductByIdDto } from "./find-product-by-id.dto";
-import { ProductNotFoundException } from "src/domain/product-not-found.exception";
+import { ProductNotFoundException } from "../../../../../libs/exceptions/not-found.exception";
  
 @Injectable()
 export class FindProductByIdUseCase{ 

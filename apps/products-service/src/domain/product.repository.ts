@@ -9,6 +9,7 @@ import { Product } from "./product";
 export abstract class ProductRepository {
     abstract createProduct(product: Product): Promise<void>;
     abstract findProductById(id: string): Promise<Product | null>;
+    abstract findAllProducts(): Promise<Product[]>;
     abstract updateProduct(product: Product): Promise<void>;
-    abstract deleteProduct(id: string): Promise<void>;
+    abstract deleteProduct(id: string): Promise<void>; 
 }

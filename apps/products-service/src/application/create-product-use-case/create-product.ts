@@ -1,7 +1,7 @@
 import { ProductRepository } from "src/domain/product.repository";
  import { CreateProductDto } from "./create-product.dto";
 import { PrimitiveProduct, Product } from "src/domain/product";  
-import { Injectable } from "src/shared/dependency-injection/injectable";
+import { Injectable } from "../../../../../libs/shared/injectable";
 
 // custom inyectable, para no depender directamente de NestJS en la capa de aplicacion
 @Injectable()

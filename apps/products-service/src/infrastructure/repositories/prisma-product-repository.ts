@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { Product } from "src/domain/product"; 
 import { ProductRepository } from "src/domain/product.repository";
-import { Injectable } from "src/shared/dependency-injection/injectable";
+import { Injectable } from "../../../../../libs/shared/injectable";
 
 const prisma = new PrismaClient();
 
@@ -37,6 +37,23 @@ export class PrismaProductRepository implements ProductRepository {
       updated_at: productData.updatedAt,
       deleted_at: productData.deletedAt,
     });
+  }
+  
+  async findAllProducts(): Promise<Product[]> {
+    const products = await prisma.product.findMany({
+      where: { deletedAt: null },
+    });
+    
+    return products.map(productData => new Product({
+      id: productData.id,
+      name: productData.name,
+      description: productData.description,
+      price: productData.price,
+      stock: productData.stock,
+      created_at: productData.createdAt,
+      updated_at: productData.updatedAt,
+      deleted_at: productData.deletedAt,
+    }));
   }
   
   async updateProduct(product: Product): Promise<void> {

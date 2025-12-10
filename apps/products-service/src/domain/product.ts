@@ -20,6 +20,14 @@ export class Product {
         return { ...this.props };
     }
 
+    update(data: { name?: string; price?: number; description?: string; stock?: number }): void {
+        if (data.name !== undefined) this.props.name = data.name;
+        if (data.price !== undefined) this.props.price = data.price;
+        if (data.description !== undefined) this.props.description = data.description;
+        if (data.stock !== undefined) this.props.stock = data.stock;
+        this.props.updated_at = new Date();
+    }
+
     static create(createProduct: {
         id: string;
         name: string;

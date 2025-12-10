@@ -1,7 +1,6 @@
-import { Module } from "@nestjs/common";
-import { ProductModule } from "src/infraestructure/product.module";
-
-
+import { Module } from "@nestjs/common"; 
+import { ProductModule } from "src/infrastructure/product.module";
+ 
 @Module({
     imports: [
         ProductModule

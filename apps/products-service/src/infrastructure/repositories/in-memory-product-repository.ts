@@ -1,6 +1,6 @@
  import { PrimitiveProduct, Product } from "src/domain/product";
 import { ProductRepository } from "src/domain/product.repository";
-import { Injectable } from "src/shared/dependency-injection/injectable";
+import { Injectable } from "../../../../../libs/shared/injectable";
 
 @Injectable()
 export class InMemoryProductRepository implements ProductRepository {
@@ -17,6 +17,10 @@ export class InMemoryProductRepository implements ProductRepository {
             return null;
         }
         return new Product(product);
+    }
+
+    async findAllProducts(): Promise<Product[]> {
+        return this.products.map(p => new Product(p));
     }
 
     async updateProduct(product: Product): Promise<void> {
