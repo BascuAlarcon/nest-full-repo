@@ -1,23 +1,6 @@
 version: '3.8'
 
-services:
-  tasks-service:
-    build:
-      context: ./apps/tasks-service
-    ports:
-      - "3000:3000"
-    depends_on:
-      - postgres
-      - redis
-
-  notifications-service:
-    build:
-      context: ./apps/notifications-service
-    ports:
-      - "8000:8000"
-    depends_on:
-      - redis
-
+services:  
   postgres:
     image: postgres:15-alpine
     environment:
@@ -31,3 +14,15 @@ services:
     image: redis:7-alpine
     ports:
       - "6379:6379"
+
+  products-service:
+    build:
+      context: .
+      dockerfile: ./apps/products-service/Dockerfile
+    ports:
+      - "3001:3000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: "postgresql://user:password@postgres:5432/mydb"
+      NODE_ENV: "production"

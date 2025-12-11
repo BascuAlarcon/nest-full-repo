@@ -8,10 +8,17 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci --omit=dev
+
+# Copy Prisma schema and generate client
+COPY ./apps/products-service/prisma ./prisma
+RUN npx prisma generate
 
 # Copy source code
 COPY . .
+
+# Copy shared libraries
+COPY ../../libs ./libs
 
 # Expose port
 EXPOSE 3000
