@@ -28,10 +28,7 @@ COPY ./apps/products-service/nest-cli.json ./
 COPY ./libs /usr/src/app/libs
 
 # Build the application
-RUN npm run build
-
-# Verify the build output exists
-RUN ls -la dist/ || echo "Build failed - no dist directory"
+RUN npm run build 
 
 # Copy entrypoint script
 COPY ./apps/products-service/docker-entrypoint.sh ./docker-entrypoint.sh
