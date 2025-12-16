@@ -1,8 +1,8 @@
 import { ProductRepository } from "src/domain/product.repository"; 
 import { PrimitiveProduct, Product } from "src/domain/product";  
 import { Injectable } from "../../../../../libs/shared/injectable";
-import { FindProductByIdDto } from "./find-product-by-id.dto";
-import { ProductNotFoundException } from "../../../../../libs/exceptions/not-found.exception";
+import { FindProductByIdDto } from "./find-product-by-id.dto"; 
+import { ItemNotFoundException } from "libs/exceptions/not-found.exception";
  
 @Injectable()
 export class FindProductByIdUseCase{ 
@@ -12,7 +12,7 @@ export class FindProductByIdUseCase{
         const product = await this.productRepository.findProductById(FindProductByIdDto.id);
 
         if (!product) {
-            throw new ProductNotFoundException(FindProductByIdDto.id);
+            throw new ItemNotFoundException(FindProductByIdDto.id);
         }
 
         return { 

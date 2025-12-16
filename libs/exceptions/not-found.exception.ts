@@ -1,5 +1,5 @@
-export class ProductNotFoundException extends Error {
-    constructor(public readonly productId: string) {
-        super(`Product with ID ${productId} not found.`); 
+export class ItemNotFoundException extends Error {
+    constructor(public readonly itemId: string) {
+        super(`Item with ID ${itemId} not found.`); 
     }   
 }
