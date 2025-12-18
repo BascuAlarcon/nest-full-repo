@@ -87,7 +87,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
         );
 
         // Respuesta HTTP
-        const errorResponse: any = {
+        const errorResponse: any = { 
             statusCode: status,
             timestamp: new Date().toISOString(),
             path: request.url,
